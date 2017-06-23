@@ -1,8 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { reduxForm, Field } from 'redux-form';
 import { createPost } from '../actions/index';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 function validate(values) {
@@ -56,7 +57,7 @@ class PostsNew extends Component {
         // Blog post has been created, navigate the user to the index
         // We navigate by calling this.context.router.push with the
         // new path to navigate to.
-        this.context.router.push("/");
+        this.props.history.push("/");
       });
   }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/index';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class PostsIndex extends Component {
   componentWillMount() {
@@ -12,7 +12,7 @@ class PostsIndex extends Component {
     return this.props.posts.map((post) => {
       return (
         <li className="list-group-item" key={post.id}>
-          <Link to={`posts/${post.id}`}>
+          <Link to={`/posts/${post.id}`}>
             <span className="pull-xs-right">{post.categories}</span>
             <strong>{post.title}</strong>
           </Link>
